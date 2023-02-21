@@ -1,1 +1,2 @@
-# AI-Image-Analysis
+# UCSDAIProject
+AI Project for UCSD
