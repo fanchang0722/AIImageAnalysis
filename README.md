@@ -27,9 +27,7 @@ A Convolutional Neural Network (CNN) is a type of neural network that is used fo
 the process of how a CNN works here, but I will explain how it is used in this project. The CNN is given pairs of images:
 one image containing the full area and the other image containing the manually segmented out image that only includes the target area.
 The CNN will use these image pairs to take an unsegmented image in the future and then segment it down to
-the target area. Here is an example of what that would look like:
-
-![Pre Cut Image](/data/2 DRG/01122023_DRG/Dish 3 WT H2O2/FOV1 5 cuts/overlay/E198_01_12_23_13h02m_57s_ms565__WT_Day4_H2O2.tif?raw=true "Title")
+the target area.
 
 ### Environment for Reinforcement Learning
 The environment we are using for the Reinforcement Learning is a custom environment that is built using Keras. When I say
@@ -58,4 +56,34 @@ Victor you can add your relevant guide here if you would like - Alex
 
 ### Installing Python/Anaconda/Packages (M1 Mac)
 1. Install Anaconda (https://repo.anaconda.com/archive/Anaconda3-2022.10-MacOSX-arm64.pkg)
-2. Open Anaconda Navigator
+2. Open Anaconda Navigator (what you just installed)
+3. Click on "Environments" on the left side of the screen
+4. Click on "Create" at the Bottom left side of the screen
+5. For name say "UCSDAIProject"
+6. For Packages click check on "Python" and make the version 3.8.16
+7. Click "Create"
+8. Now click on the green arrow that is to the right of the name of the environment
+9. Now click "Open Terminal"
+10. In the terminal window then type out these commands (type "y" for every prompt that comes up:
+```
+    conda install -c apple tensorflow-deps
+    python3 -m pip install tensorflow-macos==2.9.0
+    python3 -m pip install tensorflow-metal==0.5.0
+    python3 -m pip install gym==0.25.2
+    python3 -m pip install matplotlib==3.6.2
+    python3 -m pip install numpy==1.24.2
+``` 
+11. Now install Visual Studio Code (https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal)
+12. Open Visual Studio Code
+13. In Visual Studio Code hit Extensions (its the final icon on the left panel)
+14. Now install Python
+15. Install Github Desktop (https://central.github.com/deployments/desktop/desktop/latest/darwin)
+16. Open Github Desktop
+17. In Github Desktop click on "Clone a repository from the internet" (Keep in mind you will need to have a Github account)
+18. Then hit "URL" and put in this link: https://github.com/VictorNiu1/AIImageAnalysis
+19. Now just hit "Clone"
+20. Hit Open in Visual Studio Code
+21. Once Visual Studio Code Opens hit "Trust the authors of all files in the parent folder 'GitHub'" and then click "Yes, I trust the authors"
+22. Then hit Select Python Interpretor and then click on UCSDAIProject
+23. Okay now click on the models folder and then click on the DDPG.py file
+24. Now click on the arrow in the upper right corner and watch it run in the terminal!
