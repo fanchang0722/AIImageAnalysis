@@ -65,14 +65,14 @@ Victor you can add your relevant guide here if you would like - Alex
 7. Click "Create"
 8. Now click on the green arrow that is to the right of the name of the environment
 9. Now click "Open Terminal"
-10. In the terminal window then type out these commands (type "y" for every prompt that comes up:
+10. In the terminal window then type out these commands (type "y" for every prompt that comes up):
 ```
-    conda install -c apple tensorflow-deps
-    python3 -m pip install tensorflow-macos==2.9.0
-    python3 -m pip install tensorflow-metal==0.5.0
-    python3 -m pip install gym==0.25.2
-    python3 -m pip install matplotlib==3.6.2
-    python3 -m pip install numpy==1.24.2
+conda install -c apple tensorflow-deps
+python3 -m pip install tensorflow-macos==2.9.0
+python3 -m pip install tensorflow-metal==0.5.0
+python3 -m pip install gym==0.25.2
+python3 -m pip install matplotlib==3.6.2
+python3 -m pip install numpy==1.24.2
 ``` 
 11. Now install Visual Studio Code (https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal)
 12. Open Visual Studio Code
