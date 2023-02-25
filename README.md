@@ -48,7 +48,8 @@ I won't go into the mathematics of it or the in-depth computer science behind it
 it works so the code might be better understood. There are two neural networks inside the DDPG neural network. 
 One neural network is the actor's neural network: a network designed to perform an action based on an input.
 The other neural network is the critic's neural network, which is designed to critique the actor's performance by assigning
-it a value based on how well it did (think of this as similar to giving the actor a rating from 1-10).
+it a value based on how well it did (think of this as similar to giving the actor a rating from 1-10). 
+The actor then performs differently based on the advice from the critic. 
 
 ## How to Run the Code
 ### Installing Python/Anaconda/Packages (Windows)
