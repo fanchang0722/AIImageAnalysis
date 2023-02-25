@@ -1,11 +1,11 @@
 import gym
-import tensorflow as tf
 from keras import layers
+import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-problem = "DRG"
+problem = "Pendulum-v1"
 env = gym.make(problem)
 
 num_states = env.observation_space.shape[0]
@@ -18,6 +18,9 @@ lower_bound = env.action_space.low[0]
 
 print("Max Value of Action ->  {}".format(upper_bound))
 print("Min Value of Action ->  {}".format(lower_bound))
+
+physical_devices = tf.config.list_physical_devices('GPU')
+print("Num GPUs:", len(physical_devices))
 
 class OUActionNoise:
     def __init__(self, mean, std_deviation, theta=0.15, dt=1e-2, x_initial=None):
@@ -69,7 +72,7 @@ class Buffer:
         # replacing old records
         index = self.buffer_counter % self.buffer_capacity
 
-        self.state_buffer[index] = obs_tuple[0][0]
+        self.state_buffer[index] = obs_tuple[0]
         self.action_buffer[index] = obs_tuple[1]
         self.reward_buffer[index] = obs_tuple[2]
         self.next_state_buffer[index] = obs_tuple[3]
@@ -234,11 +237,10 @@ for ep in range(total_episodes):
         # But not in a python notebook.
         # env.render()
 
-        tf_prev_state = tf.expand_dims(tf.convert_to_tensor(prev_state[0]), 0)
-
+        tf_prev_state = tf.expand_dims(tf.convert_to_tensor(prev_state), 0)
         action = policy(tf_prev_state, ou_noise)
         # Receive state and reward from environment.
-        state, reward, done, info, terminated = env.step(action)
+        state, reward, done, info = env.step(action)
 
         buffer.record((prev_state, action, reward, state))
         episodic_reward += reward
