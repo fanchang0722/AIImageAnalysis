@@ -3,7 +3,7 @@ from keras import layers
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-
+import datetime
 
 problem = "Pendulum-v1"
 env = gym.make(problem)
@@ -227,6 +227,9 @@ ep_reward_list = []
 avg_reward_list = []
 
 # Takes about 4 min to train
+start_time = datetime.datetime.now()
+print("Training start time:", start_time)
+
 for ep in range(total_episodes):
 
     prev_state = env.reset()
@@ -262,6 +265,11 @@ for ep in range(total_episodes):
     print("Episode * {} * Avg Reward is ==> {}".format(ep, avg_reward))
     avg_reward_list.append(avg_reward)
 
+end_time = datetime.datetime.now()
+print("Training end time:", end_time)
+duration = end_time - start_time
+print("Total training time in seconds:", duration.total_seconds())
+      
 # Plotting graph
 # Episodes versus Avg. Rewards
 plt.plot(avg_reward_list)
