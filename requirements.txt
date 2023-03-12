@@ -5,3 +5,4 @@ matplotlib~=3.6.2
 tensorflow-macos~=2.9.0
 tensorflow-metal~=0.5.0
 opencv~=4.7.0.72
+absl-py~=1.4.0
