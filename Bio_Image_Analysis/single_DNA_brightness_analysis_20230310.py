@@ -126,17 +126,18 @@ def main(argv):
         plt.title(fileName)
         plt.grid(False)
         plt.tight_layout()
-    plt.savefig(os.path.join(destFolder, "{}.png".format(folderName.split("\\")[-1])), dpi=150)
+    plt.savefig(os.path.join(destFolder, "{}_threshpercent_{}.png".format(
+        folderName.split("\\")[-1], threshPercentage)), dpi=150)
     plt.close()
 
     # save timeStamp, brightness result
     df = pd.DataFrame(timeStamp, columns=["Time"])
     df["signal"] = brightness
-    df.to_csv(os.path.join(destFolder, "{}_brightness.csv".format(folderName.split("\\")[-1])), index=False)
+    df.to_csv(os.path.join(destFolder, "{}_brightness_threshpercent_{}.csv".format(folderName.split("\\")[-1], threshPercentage)), index=False)
 
     # generate brightness plot
     brightness_plot(brightness, timeStamp, title="{}".format(folderName.split("\\")[-1]),
-                    fileName=os.path.join(destFolder, "{}_brightness.png".format(folderName.split("\\")[-1])))
+                    fileName=os.path.join(destFolder, "{}_brightness_threshpercent_{}.png".format(folderName.split("\\")[-1], threshPercentage)))
 
     logging.info("================= Finish data analysis =================")
 
