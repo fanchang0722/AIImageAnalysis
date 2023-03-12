@@ -12,6 +12,10 @@ flags:
     (default: '96')
     (an integer)
 
+The result saved into the "output" under the folder which contains all images.
+1. Montage of all image (overlay the origin image and detected line)
+2. Brightness vs. Time graph
+3. Brightness vs. Time "csv" text result
 """
 import os
 import numpy as np
