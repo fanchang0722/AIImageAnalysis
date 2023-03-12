@@ -73,7 +73,7 @@ python3 -m pip install tensorflow-metal==0.5.0
 python3 -m pip install gym==0.25.2
 python3 -m pip install matplotlib==3.6.2
 python3 -m pip install numpy==1.24.2
-python3 -m pip install opencv-python==4.7.0
+python3 -m pip install opencv-python==4.7.0.72
 ``` 
 11. Now install Visual Studio Code (https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal)
 12. Open Visual Studio Code
