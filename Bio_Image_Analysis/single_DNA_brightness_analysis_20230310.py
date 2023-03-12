@@ -1,3 +1,18 @@
+"""
+Laser cutting signal detection on single cell
+
+USAGE: python3.8 .\single_DNA_brightness_analysis_20230310.py [flags]
+flags:
+
+.\single_DNA_brightness_analysis_20230310.py:
+  --folder: Single DNA folder
+    (default: 'C:\\Users\\changfan\\Documents\\GitHub\\AIImageAnalysis\\Bio_Imag
+    e_Analysis\\U2OS_53KO_5979GFP_FOV3')
+  --threshPercentage: the percentage is an integer between 0 and 100
+    (default: '96')
+    (an integer)
+
+"""
 import os
 import numpy as np
 import cv2
